@@ -7,4 +7,4 @@ NEVER SYNC!!!!
 Git Commands:
 git branch -a | Shows all branches
 git branch (name) | Creates local branch
-git checkout (name) | Sets head to branch
+git checkout (name) | Sets head to branch generic test
