@@ -7,7 +7,13 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.drive.MecanumDrive;
+import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
@@ -15,7 +21,19 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class DriveTrain extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+  public MecanumDrive m_robotDrive;
+  private SpeedController frontLeftMotor = new Talon(RobotMap.Front_Left_Motor);
+  private SpeedController rearLeftMotor = new Talon(RobotMap.Rear_Left_Motor);
+  private SpeedController frontRightMotor = new Talon(RobotMap.Front_Right_Motor);
+  private SpeedController rearRightMotor = new Talon(RobotMap.Rear_Right_Motor);
 
+  public DriveTrain(){
+  m_robotDrive = new MecanumDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
+  }
+
+  public void drive(Joystick joy, Joystick aux) {
+    m_robotDrive.driveCartesian(joy.getX(), joy.getY(), aux.getX());
+  }
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
