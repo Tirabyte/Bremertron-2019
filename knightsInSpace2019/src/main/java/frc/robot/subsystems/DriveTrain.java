@@ -30,8 +30,11 @@ public class DriveTrain extends Subsystem {
   m_robotDrive = new MecanumDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
   }
 
-  public void drive(Joystick joy, Joystick aux) {
+  public void jdrive(Joystick joy, Joystick aux) {
     m_robotDrive.driveCartesian(joy.getX(), joy.getY(), aux.getX());
+  }
+  public void drive(double x, double y, double zRotation) {
+    m_robotDrive.driveCartesian(x, y, zRotation);
   }
   @Override
   public void initDefaultCommand() {
