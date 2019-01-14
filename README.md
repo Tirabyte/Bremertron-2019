@@ -10,3 +10,5 @@ git branch (name) | Creates local branch
 git checkout (name) | Sets head to branch generic
 git fetch | get changes but doesn't modify local copy of code
 git pull | get changes and overwrites local copy of code
+
+Insert memes here
