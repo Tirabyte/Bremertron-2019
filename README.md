@@ -5,10 +5,10 @@ Make sure you read the documentation for git!
 NEVER SYNC!!!!
 
 Git Commands:
-git branch -a | Shows all branches
-git branch (name) | Creates local branch
-git checkout (name) | Sets head to branch generic
-git fetch | get changes but doesn't modify local copy of code
-git pull | get changes and overwrites local copy of code
+git branch -a | Shows all branches <br>
+git branch (name) | Creates local branch<br>
+git checkout (name) | Sets head to branch generic<br>
+git fetch | get changes but doesn't modify local copy of code<br>
+git pull | get changes and overwrites local copy of code<br>
 
 Insert memes here
