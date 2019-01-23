@@ -7,11 +7,17 @@
 
 package frc.robot.subsystems;
 
+import java.util.concurrent.DelayQueue;
+import java.util.concurrent.Delayed;
+
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.RobotMap;
 
 /**
@@ -25,6 +31,9 @@ public class DriveTrain extends Subsystem {
   private SpeedController rearLeftMotor = new Talon(RobotMap.Rear_Left_Motor);
   private SpeedController frontRightMotor = new Talon(RobotMap.Front_Right_Motor);
   private SpeedController rearRightMotor = new Talon(RobotMap.Rear_Right_Motor);
+  private double kUpdatePeriod = 0.005; 
+
+  Encoder leftSide = new Encoder(1, 2, false, Encoder.EncodingType.k4X);
 
   public DriveTrain(){
   m_robotDrive = new MecanumDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
@@ -32,6 +41,13 @@ public class DriveTrain extends Subsystem {
 
   public void jdrive(Joystick joy, Joystick aux) {
     m_robotDrive.driveCartesian(joy.getX(), joy.getY(), aux.getX());
+    while(leftSide.getDistance() < 2) {
+      SmartDashboard.putNumber("Encoder Distance",leftSide.getDistance());
+      // prints displacement in revolutions
+      SmartDashboard.putNumber("Encoder Rate",leftSide.getRate());
+      // prints rate in Revs per second 
+      Timer.delay(kUpdatePeriod);
+    }
   }
   public void drive(double x, double y, double zRotation) {
     m_robotDrive.driveCartesian(x, y, zRotation);
