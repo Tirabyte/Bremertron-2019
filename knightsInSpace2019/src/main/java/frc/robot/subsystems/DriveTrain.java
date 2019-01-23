@@ -33,7 +33,7 @@ public class DriveTrain extends Subsystem {
   private SpeedController rearRightMotor = new Talon(RobotMap.Rear_Right_Motor);
   private double kUpdatePeriod = 0.005; 
 
-  Encoder leftSide = new Encoder(1, 2, false, Encoder.EncodingType.k4X);
+  Encoder leftSide = new Encoder(RobotMap.Left_EncoderA, RobotMap.Left_EncoderB, false, Encoder.EncodingType.k4X);
 
   public DriveTrain(){
   m_robotDrive = new MecanumDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
