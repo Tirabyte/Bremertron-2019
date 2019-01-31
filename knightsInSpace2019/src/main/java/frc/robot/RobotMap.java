@@ -14,11 +14,21 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
-  //Drive Train Motor Assingment
+  //Drive Train Motor Assingments
   public static int Front_Left_Motor = 1;
   public static int Front_Right_Motor = 2;
   public static int Rear_Left_Motor = 3;
   public static int Rear_Right_Motor = 4;
+
+  //Piston Assignments
+  public static int Front_Wheel_Piston = 0;
+  public static int Rear_Wheel_Piston = 1;
+  public static int Launcher_Piston = 2;
+  public static int Hatch_Pistion = 3;
+
+  //Launcher Motor Assignments
+  public static int Launcher_Motor = 5;
+
 
   // If you are using multiple modules, make sure to define both the port
   // number and the module. For example you with a rangefinder:
