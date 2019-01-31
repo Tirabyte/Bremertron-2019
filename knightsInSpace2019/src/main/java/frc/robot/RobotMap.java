@@ -29,6 +29,11 @@ public class RobotMap {
   //Launcher Motor Assignments
   public static int Launcher_Motor = 5;
 
+  //Encoder Assignments
+  public static int Left_EncoderA = 1;
+  public static int Left_EncoderB = 2;
+  public static int Right_EncoderA = 3;
+  public static int Right_EncoderB = 4;
 
   // If you are using multiple modules, make sure to define both the port
   // number and the module. For example you with a rangefinder:
