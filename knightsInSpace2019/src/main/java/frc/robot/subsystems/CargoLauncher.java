@@ -7,6 +7,7 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -18,16 +19,25 @@ import frc.robot.RobotMap;
 public class CargoLauncher extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+  private static double m_speed = 0.5;
 
-  public Solenoid m_LiftPiston = new Solenoid(RobotMap.Launcher_Piston);
-
+  public Solenoid m_LauncherPiston = new Solenoid(RobotMap.Launcher_Piston);
+  
   public static Talon m_LaunchIOMotor1 = new Talon(RobotMap.Launcher_IntakeOutakeMotor1);
   public static Talon m_LaunchIOMotor2 = new Talon(RobotMap.Launcher_IntakeOutakeMotor2);
   public static Talon m_LaunchRMotor1 = new Talon(RobotMap.Launcher_RotationalMotor1);
   public static Talon m_LaunchRMotor2 = new Talon(RobotMap.Launcher_RotationalMotor2);
 
-  public void setRPosition(int position){
-    
+  public static Encoder m_LauncherREncoder = new Encoder(RobotMap.Launcher_EncoderA, RobotMap.Launcher_EncoderB);
+
+  public void setPosition(boolean direction){ //true for clockwise, false for counterclockwise
+    if(direction = true){
+      m_LaunchRMotor1.set(-m_speed);
+      m_LaunchRMotor2.set(m_speed);
+    }else {
+      m_LaunchRMotor1.set(m_speed);
+      m_LaunchRMotor2.set(-m_speed);
+    }
   }
   @Override
   public void initDefaultCommand() {
