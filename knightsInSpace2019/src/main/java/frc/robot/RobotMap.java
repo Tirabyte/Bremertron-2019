@@ -27,7 +27,10 @@ public class RobotMap {
   public static int Hatch_Pistion = 3;
 
   //Launcher Motor Assignments
-  public static int Launcher_Motor = 5;
+  public static int Launcher_IntakeOutakeMotor1 = 5;
+  public static int Launcher_IntakeOutakeMotor2 = 6;
+  public static int Launcher_RotationalMotor1 = 7;
+  public static int Launcher_RotationalMotor2 = 8;
 
   //Encoder Assignments
   public static int Left_EncoderA = 1;

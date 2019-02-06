@@ -21,8 +21,14 @@ public class CargoLauncher extends Subsystem {
 
   public Solenoid m_LiftPiston = new Solenoid(RobotMap.Launcher_Piston);
 
-  public static Talon m_LaunchMotor = new Talon(RobotMap.Launcher_Motor);
+  public static Talon m_LaunchIOMotor1 = new Talon(RobotMap.Launcher_IntakeOutakeMotor1);
+  public static Talon m_LaunchIOMotor2 = new Talon(RobotMap.Launcher_IntakeOutakeMotor2);
+  public static Talon m_LaunchRMotor1 = new Talon(RobotMap.Launcher_RotationalMotor1);
+  public static Talon m_LaunchRMotor2 = new Talon(RobotMap.Launcher_RotationalMotor2);
 
+  public void setRPosition(int position){
+    
+  }
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
