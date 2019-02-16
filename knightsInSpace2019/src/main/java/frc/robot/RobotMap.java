@@ -14,23 +14,27 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
-  //Drive Train Motor Assingments
-  public static int Front_Left_Motor = 1;
-  public static int Front_Right_Motor = 2;
-  public static int Rear_Left_Motor = 3;
-  public static int Rear_Right_Motor = 4;
+  //Motor Assignments
+  //Drive Train Assignments
+  public static int Front_Left_Motor = 0;
+  public static int Front_Right_Motor = 1;
+  public static int Rear_Left_Motor = 2;
+  public static int Rear_Right_Motor = 3;
+
+  //Gripper Assignments
+  public static int Panel_Intake_Motor = 6;
+
+  //Launcher Assignments
+  public static int Launcher_IntakeOutakeMotor1 = 4;
+  public static int Launcher_IntakeOutakeMotor2 = 5;
+  public static int Launcher_RotationalMotor1 = 7;
+  public static int Launcher_RotationalMotor2 = 8;
 
   //Piston Assignments
   public static int Front_Wheel_Pistons = 0;
   public static int Rear_Wheel_Pistons = 1;
   public static int Launcher_Piston = 2;
   public static int Hatch_Pistion = 3;
-
-  //Launcher Motor Assignments
-  public static int Launcher_IntakeOutakeMotor1 = 5;
-  public static int Launcher_IntakeOutakeMotor2 = 6;
-  public static int Launcher_RotationalMotor1 = 7;
-  public static int Launcher_RotationalMotor2 = 8;
 
   //Encoder Assignments
   public static int Left_EncoderA = 1;
