@@ -7,7 +7,9 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
@@ -15,7 +17,16 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class PanelGripper extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+  private double m_speed = 1.0;
+  private static Talon m_IntakeMotor = new Talon(RobotMap.Panel_Intake_Motor);
 
+  public void gripPanel(boolean direction){
+    if(direction = true){
+      m_IntakeMotor.set(m_speed);
+    }else{
+      m_IntakeMotor.set(0);
+    }
+  }
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
