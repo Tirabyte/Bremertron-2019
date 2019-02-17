@@ -20,6 +20,7 @@ public class CargoLauncher extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   private static double m_speed = 0.5;
+  private static double m_launchSpeed = 0.7;
 
   public Solenoid m_LauncherPiston = new Solenoid(RobotMap.Launcher_Piston);
   
@@ -39,6 +40,18 @@ public class CargoLauncher extends Subsystem {
       m_LaunchRMotor2.set(-m_speed);
     }
   }
+
+  public void cargoIO(boolean direction){ //true for Intake, false for outtake
+    if(direction = true){
+      m_LaunchIOMotor1.set(-m_launchSpeed);
+      m_LaunchIOMotor2.set(-m_launchSpeed);
+    }else{
+      m_LaunchIOMotor1.set(m_launchSpeed);
+      m_LaunchIOMotor2.set(m_launchSpeed);
+    }
+    
+  }
+
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
