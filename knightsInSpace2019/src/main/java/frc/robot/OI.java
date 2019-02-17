@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.HatchRS;
 import frc.robot.commands.LauncherRS;
 
 /**
@@ -53,6 +54,8 @@ public class OI {
   	public static int axisAuxZ = 2;
 
   public OI(){
+	button2.whileHeld(new HatchRS(true));
+	button2.whenReleased(new HatchRS(false));
 	buttonAux1.whenPressed(new LauncherRS(false));
 	buttonAux2.whenPressed(new LauncherRS(true));
   }
