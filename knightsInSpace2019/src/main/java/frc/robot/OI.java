@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.LauncherRS;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -49,10 +50,11 @@ public class OI {
 	JoystickButton buttonAux11 = new JoystickButton(aux, 11);
 	public static int axisAuxX = 0;
 	public static int axisAuxY = 1;
-  public static int axisAuxZ = 2;
+  	public static int axisAuxZ = 2;
 
   public OI(){
-
+	buttonAux1.whenPressed(new LauncherRS(false));
+	buttonAux2.whenPressed(new LauncherRS(true));
   }
 
   public Joystick getJoystick(){
