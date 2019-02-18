@@ -17,8 +17,8 @@ import frc.robot.RobotMap;
 public class LifterMechanism extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  private static Solenoid ForePistons = new Solenoid(RobotMap.Front_Wheel_Pistons);
-  private static Solenoid AftPistons = new Solenoid(RobotMap.Rear_Wheel_Pistons);
+  public static Solenoid ForePistons = new Solenoid(RobotMap.Front_Wheel_Pistons);
+  public static Solenoid AftPistons = new Solenoid(RobotMap.Rear_Wheel_Pistons);
 
   public void setPistonHeight(boolean height, Solenoid piston){
     piston.set(height);

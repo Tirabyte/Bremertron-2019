@@ -8,54 +8,50 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
-import frc.robot.subsystems.LifterMechanism;
-import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.Timer;
+import frc.robot.subsystems.DriveTrain;
 
-public class SetPistonHeight extends Command {
-   private LifterMechanism m_lifter;
-   private boolean m_height;
-   private Solenoid m_piston;
-   private boolean m_finished;
-   
-   public SetPistonHeight(boolean i, Solenoid piston) {
+public class AutoDriveForward extends Command {
+
+  private double m_distance;
+  private static DriveTrain m_DriveTrain;
+  public AutoDriveForward(double distance) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.m_lifter);
-    m_lifter = Robot.m_lifter;
-    m_height = i;
-    m_piston = piston;
-    m_finished = false;
+    m_distance = distance;
+    requires(m_DriveTrain);
   }
- 
+
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    m_DriveTrain.resetDriveEncoders();
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    m_lifter.setPistonHeight(m_height, m_piston);
-    Timer.delay(4);  // delay to weight for piston to reach extension NEED ACTUAL TIME
-    m_finished = true;
+    while(m_DriveTrain.getDistance() != m_distance){
+      m_DriveTrain.drive(0.5, 0, 0);
+    }
+    isFinished();
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return m_finished;
+    return true;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    m_DriveTrain.stop();
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    m_DriveTrain.stop();
   }
 }

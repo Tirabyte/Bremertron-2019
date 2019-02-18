@@ -60,11 +60,19 @@ public class DriveTrain extends Subsystem {
     m_robotDrive.driveCartesian(x, y, zRotation);
   }
 
+  public double getDistance(){
+    return m_LF_encoder.getDistance();
+  }
+
   public void resetDriveEncoders(){
     m_LF_encoder.reset();
     m_RF_encoder.reset();
     m_LB_encoder.reset();
     m_RB_encoder.reset();
+  }
+
+  public void stop(){
+    this.drive(0, 0, 0);
   }
   @Override
   public void initDefaultCommand() {
