@@ -29,7 +29,7 @@ public class CargoLauncher extends Subsystem {
   public static Talon m_LaunchRMotor1 = new Talon(RobotMap.Launcher_RotationalMotor1);
   public static Talon m_LaunchRMotor2 = new Talon(RobotMap.Launcher_RotationalMotor2);
 
-  public static Encoder m_LauncherREncoder = new Encoder(RobotMap.Launcher_EncoderA, RobotMap.Launcher_EncoderB);
+  public static Encoder m_LauncherEncoder = new Encoder(RobotMap.Launcher_EncoderA, RobotMap.Launcher_EncoderB);
 
   public void setPosition(boolean direction){ //true for clockwise, false for counterclockwise
     if(direction = true){
@@ -49,7 +49,10 @@ public class CargoLauncher extends Subsystem {
       m_LaunchIOMotor1.set(m_launchSpeed);
       m_LaunchIOMotor2.set(m_launchSpeed);
     }
-    
+  }
+
+  public void resetLauncherEncoder(){
+    m_LauncherEncoder.reset();
   }
 
   @Override
