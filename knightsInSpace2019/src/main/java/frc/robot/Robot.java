@@ -17,7 +17,7 @@ import frc.robot.subsystems.CargoLauncher;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.LifterMechanism;
-import frc.robot.subsystems.PanelGripper;
+import frc.robot.subsystems.HatchGripper;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -31,7 +31,7 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   public static DriveTrain m_drivetrain;
   public static CargoLauncher m_launcher;
-  public static PanelGripper m_gripper;
+  public static HatchGripper m_gripper;
   public static LifterMechanism m_lifter;
 
   Command m_autonomousCommand;
@@ -46,7 +46,7 @@ public class Robot extends TimedRobot {
     m_oi = new OI();
     m_drivetrain = new DriveTrain();
     m_launcher = new CargoLauncher();
-    m_gripper = new PanelGripper();
+    m_gripper = new HatchGripper();
     m_lifter = new LifterMechanism();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());

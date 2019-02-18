@@ -35,7 +35,7 @@ public class RobotMap {
   public static int Front_Wheel_Pistons = 0;
   public static int Rear_Wheel_Pistons = 1;
   public static int Launcher_Piston = 2;
-  public static int Hatch_Pistion = 3;
+  public static int Hatch_Piston = 3;
   public static int Hatch_Valve_In = 4;
   public static int Hatch_Valve_Out = 5;
 

@@ -8,11 +8,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.PanelGripper;
+import frc.robot.subsystems.HatchGripper;
 
 public class HatchRS extends Command {
   private boolean m_direction;
-  private static PanelGripper m_PanelGripper;
+  private static HatchGripper m_PanelGripper;
 
   public HatchRS(boolean direction) {
     // Use requires() here to declare subsystem dependencies
