@@ -51,5 +51,6 @@ public class ArcadeDriveCommand extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    m_drivetrain.stop();
   }
 }
