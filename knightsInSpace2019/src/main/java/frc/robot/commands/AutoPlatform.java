@@ -19,9 +19,13 @@ public class AutoPlatform extends CommandGroup {
     // e.g. addSequential(new Command1());
     // addSequential(new Command2());
     // these will run in order.
+    addParallel(new SetPistonHeight(true, LifterMechanism.AftPistons));
     addSequential(new SetPistonHeight(true, LifterMechanism.ForePistons));
     addSequential(new AutoDriveForward(100)); //Change var when testing
-
+    addSequential(new SetPistonHeight(false, LifterMechanism.ForePistons));
+    addSequential(new AutoDriveForward(100)); //Change var when testing
+    addSequential(new SetPistonHeight(false, LifterMechanism.AftPistons));
+    addSequential(new AutoDriveForward(100)); //Change var when testing
     // To run multiple commands at the same time,
     // use addParallel()
     // e.g. addParallel(new Command1());
