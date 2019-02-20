@@ -31,7 +31,7 @@ public class RobotMap {
   public static int Launcher_RotationalMotor2 = 8;
 
 
-  //Piston Assignments
+  //Piston Assignments 
   public static int Front_Wheel_Pistons = 0;
   public static int Rear_Wheel_Pistons = 1;
   public static int Launcher_Piston = 2;
@@ -39,8 +39,7 @@ public class RobotMap {
   public static int Hatch_Valve_In = 4;
   public static int Hatch_Valve_Out = 5;
 
-
-  //Encoder Assignments
+  //Encoder Assignments (DIO)
   public static int LF_EncoderA = 0;
   public static int LF_EncoderB = 1;
   public static int RF_EncoderA = 2;
@@ -51,6 +50,10 @@ public class RobotMap {
   public static int RB_EncoderB = 7;
   public static int Launcher_EncoderA = 8;
   public static int Launcher_EncoderB = 9;
+
+  //Analog Input
+  public static int Front_Height_Ultra = 0;
+  public static int Rear_Height_Ultra = 1;
 
   // If you are using multiple modules, make sure to define both the port
   // number and the module. For example you with a rangefinder:
