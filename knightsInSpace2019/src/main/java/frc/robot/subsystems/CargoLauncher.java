@@ -8,7 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.Solenoid;
+// import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
@@ -22,7 +22,7 @@ public class CargoLauncher extends Subsystem {
   private static double m_speed = 0.5;
   private static double m_launchSpeed = 0.7;
 
-  public Solenoid m_LauncherPiston = new Solenoid(RobotMap.Launcher_Piston);
+  // public Solenoid m_LauncherPiston = new Solenoid(RobotMap.Launcher_Piston);
   
   public static Talon m_LaunchIOMotor1 = new Talon(RobotMap.Launcher_IntakeOutakeMotor1);
   public static Talon m_LaunchIOMotor2 = new Talon(RobotMap.Launcher_IntakeOutakeMotor2);

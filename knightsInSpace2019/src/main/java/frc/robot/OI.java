@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.HatchRS;
 import frc.robot.commands.LauncherRS;
+import frc.robot.commands.TestPistonRetract;
+import frc.robot.commands.TestPistonExtend;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -54,10 +56,12 @@ public class OI {
   	public static int axisAuxZ = 2;
 
   public OI(){
-	button2.whileHeld(new HatchRS(true));
-	button2.whenReleased(new HatchRS(false));
-	buttonAux1.whenPressed(new LauncherRS(false));
-	buttonAux2.whenPressed(new LauncherRS(true));
+	// button2.whileHeld(new HatchRS(true));
+	// button2.whenReleased(new HatchRS(false));
+	// buttonAux1.whenPressed(new LauncherRS(false));
+	// buttonAux2.whenPressed(new LauncherRS(true));
+	buttonAux10.whenPressed(new TestPistonExtend());
+	buttonAux11.whenPressed(new TestPistonRetract());
   }
 
   public Joystick getJoystick(){

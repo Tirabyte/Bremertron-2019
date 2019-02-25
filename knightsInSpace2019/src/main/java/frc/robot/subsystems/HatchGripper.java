@@ -21,7 +21,7 @@ public class HatchGripper extends Subsystem {
   private double m_speed = 1.0;
   private static Talon m_IntakeMotor = new Talon(RobotMap.Panel_Intake_Motor);
 
-  private static Solenoid m_panelExtender = new Solenoid(RobotMap.Hatch_Piston);
+  private static Solenoid m_panelExtender = new Solenoid(RobotMap.Hatch_PistonA, RobotMap.Hatch_PistonB);
 
   public void gripPanel(boolean direction){
     if(direction = true){

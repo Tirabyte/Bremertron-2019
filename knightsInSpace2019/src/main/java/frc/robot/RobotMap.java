@@ -32,12 +32,15 @@ public class RobotMap {
 
 
   //Piston Assignments
-  public static int Front_Wheel_Pistons = 0;
-  public static int Rear_Wheel_Pistons = 1;
-  public static int Launcher_Piston = 2;
-  public static int Hatch_Piston = 3;
-  public static int Hatch_Valve_In = 4;
-  public static int Hatch_Valve_Out = 5;
+  public static int Front_Wheel_PistonsA = 2;// Fore Legs Retract
+  public static int Front_Wheel_PistonsB = 3;// Fore Legs Extend
+  public static int Rear_Wheel_PistonsA = 0; //Rear Legs Retract
+  public static int Rear_Wheel_PistonsB = 1; // Rear Legs Extend
+  // public static int Launcher_Piston = 2;
+  public static int Hatch_PistonA = 6; //Hatch Extend
+  public static int Hatch_PistonB = 7; //Hatch Retract
+  public static int Hatch_Valve_In = 4; // Vacuum Breaker 1
+  public static int Hatch_Valve_Out = 5; // Vacuum Breaker 2
 
 
   //Encoder Assignments

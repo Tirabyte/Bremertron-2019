@@ -9,24 +9,19 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.subsystems.LifterMechanism;
-import frc.robot.commands.SetPistonHeight;
 
-public class AutoPlatform extends CommandGroup {
+public class TestPistonRetract extends CommandGroup {
   /**
    * Add your docs here.
    */
-  public AutoPlatform() {
+  public TestPistonRetract() {
+    addParallel(new SetPistonHeight(false, LifterMechanism.ForePistons));
+    addSequential(new SetPistonHeight(false, LifterMechanism.AftPistons));
     // Add Commands here:
     // e.g. addSequential(new Command1());
     // addSequential(new Command2());
     // these will run in order.
-    addParallel(new SetPistonHeight(true, LifterMechanism.AftPistons));
-    addSequential(new SetPistonHeight(true, LifterMechanism.ForePistons));
-    addSequential(new AutoDriveForward(100)); //Change var when testing
-    addSequential(new SetPistonHeight(false, LifterMechanism.ForePistons));
-    addSequential(new AutoDriveForward(100)); //Change var when testing
-    addSequential(new SetPistonHeight(false, LifterMechanism.AftPistons));
-    addSequential(new AutoDriveForward(100)); //Change var when testing
+
     // To run multiple commands at the same time,
     // use addParallel()
     // e.g. addParallel(new Command1());

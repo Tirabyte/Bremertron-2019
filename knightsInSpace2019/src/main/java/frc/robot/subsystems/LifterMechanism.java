@@ -7,7 +7,8 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
@@ -17,12 +18,18 @@ import frc.robot.RobotMap;
 public class LifterMechanism extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  public static Solenoid ForePistons = new Solenoid(RobotMap.Front_Wheel_Pistons);
-  public static Solenoid AftPistons = new Solenoid(RobotMap.Rear_Wheel_Pistons);
+  public static DoubleSolenoid ForePistons = new DoubleSolenoid(RobotMap.Front_Wheel_PistonsA, RobotMap.Front_Wheel_PistonsB);
+  public static DoubleSolenoid AftPistons = new DoubleSolenoid(RobotMap.Rear_Wheel_PistonsA, RobotMap.Rear_Wheel_PistonsB);
 
-  public void setPistonHeight(boolean height, Solenoid piston){
-    piston.set(height);
+  public void setPistonHeight(boolean height, DoubleSolenoid piston){
+    if(height == true){
+      piston.set(Value.kForward);
+  }else if(height == false){
+      piston.set(Value.kReverse);
+  }else {
+    System.out.println("Error: Invalid Input (LifterMechanism setPistonHeight method");
   }
+}
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.

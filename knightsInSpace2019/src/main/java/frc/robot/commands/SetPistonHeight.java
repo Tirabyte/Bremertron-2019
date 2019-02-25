@@ -10,19 +10,19 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.subsystems.LifterMechanism;
-import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Timer;
 
 public class SetPistonHeight extends Command {
    private LifterMechanism m_lifter;
    private boolean m_height;
-   private Solenoid m_piston;
+   private DoubleSolenoid m_piston;
    private boolean m_finished;
    
-   public SetPistonHeight(boolean i, Solenoid piston) {
+   public SetPistonHeight(boolean i, DoubleSolenoid piston) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.m_lifter);
+    //requires(Robot.m_lifter);
     m_lifter = Robot.m_lifter;
     m_height = i;
     m_piston = piston;
