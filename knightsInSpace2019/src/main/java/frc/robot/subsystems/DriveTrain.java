@@ -15,7 +15,10 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.OI;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
+import frc.robot.commands.ArcadeDriveCommand;;
 
 /**
  * Add your docs here.
@@ -78,5 +81,6 @@ public class DriveTrain extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new ArcadeDriveCommand(Robot.m_drivetrain, OI.joy, OI.aux));
   }
 }
