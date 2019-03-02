@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -22,22 +23,26 @@ public class HatchGripper extends Subsystem {
   private double m_speed = 0.5;
   private static Talon m_IntakeMotor = new Talon(RobotMap.Panel_Intake_Motor);
 
-  private static DoubleSolenoid m_panelExtender = new DoubleSolenoid(RobotMap.Hatch_PistonA, RobotMap.Hatch_PistonB);
+  private static Solenoid m_panelExtender = new Solenoid(RobotMap.Hatch_Piston);
+  private static Solenoid m_vacuumBreakSolenoid = new Solenoid(RobotMap.Hatch_VacuumBreak);
 
   public void gripPanel(boolean direction){
     if(direction = true){
+      m_vacuumBreakSolenoid.set(false);
       m_IntakeMotor.set(m_speed);
     }else{
+      m_vacuumBreakSolenoid.set(true);
       m_IntakeMotor.set(0);
     }
   }
 
   public void extendPiston(boolean extended){
-     if(extended){
+    m_panelExtender.set(extended);
+    /* if(extended){
       m_panelExtender.set(Value.kForward);
      }else {
       m_panelExtender.set(Value.kReverse);
-     }
+     }*/
   }
 
   @Override

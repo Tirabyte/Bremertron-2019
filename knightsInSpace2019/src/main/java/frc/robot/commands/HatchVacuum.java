@@ -30,7 +30,6 @@ public class HatchVacuum extends Command {
   @Override
   protected void execute() {
     System.out.println("Starting Hatch Vacuum Command");
-    m_finished = false;
     m_gripper.gripPanel(m_direction);
     m_finished = true;
   }
