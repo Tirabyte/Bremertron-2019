@@ -30,6 +30,7 @@ public class HatchVacuum extends Command {
   @Override
   protected void execute() {
     System.out.println("Starting Hatch Vacuum Command");
+    System.out.println(m_direction);
     m_gripper.gripPanel(m_direction);
     m_finished = true;
   }
@@ -43,7 +44,7 @@ public class HatchVacuum extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    System.out.println("Hatch Vacuum Command ");
+    System.out.println("Hatch Vacuum Command Ending");
     m_finished = false;
   }
 
