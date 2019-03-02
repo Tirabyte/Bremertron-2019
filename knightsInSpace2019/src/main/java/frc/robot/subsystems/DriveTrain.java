@@ -10,14 +10,14 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.PIDController;
-import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.Timer;
+// import edu.wpi.first.wpilibj.SpeedController;
+// import edu.wpi.first.wpilibj.Talon;
+// import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.OI;
+// import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+// import frc.robot.OI;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
 import frc.robot.commands.ArcadeDriveCommand;;
@@ -28,17 +28,17 @@ import frc.robot.commands.ArcadeDriveCommand;;
 public class DriveTrain extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  private static final double Kp = .3;//Placeholder Values
+  /*private static final double Kp = .3;//Placeholder Values
   private static final double Ki = 0;// PlaceHolder Value
   private static final double Kd = 0;// Placeholder Value
-  private static final double Kf = 0;// Placeholder Value
+  private static final double Kf = 0;// Placeholder Value*/
 
   public MecanumDrive m_robotDrive;
   private VictorSP frontLeftMotor = new VictorSP(RobotMap.Front_Left_Motor);
   private VictorSP rearLeftMotor = new VictorSP(RobotMap.Rear_Left_Motor);
   private VictorSP frontRightMotor = new VictorSP(RobotMap.Front_Right_Motor);
   private VictorSP rearRightMotor = new VictorSP(RobotMap.Rear_Right_Motor);
-  private double kUpdatePeriod = 0.005; 
+  // private double kUpdatePeriod = 0.005; 
 
   Encoder m_LF_encoder = new Encoder(RobotMap.LF_EncoderA, RobotMap.LF_EncoderB, false, Encoder.EncodingType.k4X);
   Encoder m_RF_encoder = new Encoder(RobotMap.RF_EncoderA, RobotMap.RF_EncoderB, false, Encoder.EncodingType.k4X);

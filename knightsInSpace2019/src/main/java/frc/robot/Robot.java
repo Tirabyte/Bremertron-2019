@@ -7,8 +7,8 @@
 
 package frc.robot;
 
-import edu.wpi.cscore.CameraServerJNI;
-import edu.wpi.cscore.UsbCamera;
+// import edu.wpi.cscore.CameraServerJNI;
+// import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
