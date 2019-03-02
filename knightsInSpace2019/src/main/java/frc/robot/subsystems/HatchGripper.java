@@ -7,8 +7,9 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
@@ -18,10 +19,10 @@ import frc.robot.RobotMap;
 public class HatchGripper extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  private double m_speed = 1.0;
+  private double m_speed = 0.5;
   private static Talon m_IntakeMotor = new Talon(RobotMap.Panel_Intake_Motor);
 
-  private static Solenoid m_panelExtender = new Solenoid(RobotMap.Hatch_PistonA, RobotMap.Hatch_PistonB);
+  private static DoubleSolenoid m_panelExtender = new DoubleSolenoid(RobotMap.Hatch_PistonA, RobotMap.Hatch_PistonB);
 
   public void gripPanel(boolean direction){
     if(direction = true){
@@ -32,7 +33,11 @@ public class HatchGripper extends Subsystem {
   }
 
   public void extendPiston(boolean extended){
-      m_panelExtender.set(extended);
+     if(extended){
+      m_panelExtender.set(Value.kForward);
+     }else {
+      m_panelExtender.set(Value.kReverse);
+     }
   }
 
   @Override

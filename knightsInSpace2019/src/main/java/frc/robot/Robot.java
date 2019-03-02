@@ -7,6 +7,9 @@
 
 package frc.robot;
 
+import edu.wpi.cscore.CameraServerJNI;
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -33,6 +36,8 @@ public class Robot extends TimedRobot {
   public static CargoLauncher m_launcher;
   public static HatchGripper m_gripper;
   public static LifterMechanism m_lifter;
+  public static CameraServer m_cam1;
+  public static CameraServer m_cam2;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -43,13 +48,18 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    m_oi = new OI();
     m_drivetrain = new DriveTrain();
     m_launcher = new CargoLauncher();
     m_gripper = new HatchGripper();
     m_lifter = new LifterMechanism();
+    m_oi = new OI();
+    m_cam1 = CameraServer.getInstance();
+    m_cam2 = CameraServer.getInstance();
+    m_cam1.startAutomaticCapture();
+    m_cam2.startAutomaticCapture();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
+
     SmartDashboard.putData("Auto mode", m_chooser);
   }
 

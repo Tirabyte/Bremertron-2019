@@ -8,19 +8,17 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.HatchGripper;
 import frc.robot.Robot;
+import frc.robot.subsystems.HatchGripper;
 
-public class HatchRS extends Command {
+public class HatchVacuum extends Command {
   private boolean m_direction;
-  private static HatchGripper m_PanelGripper;
-
-  public HatchRS(boolean direction) {
+  private HatchGripper m_gripper = Robot.m_gripper;
+  private boolean m_finished = false;
+  public HatchVacuum(boolean direction) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     m_direction = direction;
-    m_PanelGripper = Robot.m_gripper;
-    requires(Robot.m_gripper);
   }
 
   // Called just before this Command runs the first time
@@ -31,18 +29,23 @@ public class HatchRS extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    m_PanelGripper.extendPiston(m_direction);
+    System.out.println("Starting Hatch Vacuum Command");
+    m_finished = false;
+    m_gripper.gripPanel(m_direction);
+    m_finished = true;
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return m_finished;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    System.out.println("Hatch Vacuum Command ");
+    m_finished = false;
   }
 
   // Called when another command which requires one or more of the same

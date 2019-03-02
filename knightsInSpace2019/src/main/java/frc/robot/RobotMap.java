@@ -22,10 +22,10 @@ public class RobotMap {
   public static int Rear_Right_Motor = 3;
 
   //Gripper Assignments
-  public static int Panel_Intake_Motor = 6;
+  public static int Panel_Intake_Motor = 4;
 
   //Launcher Assignments
-  public static int Launcher_IntakeOutakeMotor1 = 4;
+  public static int Launcher_IntakeOutakeMotor1 = 9;
   public static int Launcher_IntakeOutakeMotor2 = 5;
   public static int Launcher_RotationalMotor1 = 7;
   public static int Launcher_RotationalMotor2 = 8;
@@ -37,8 +37,8 @@ public class RobotMap {
   public static int Rear_Wheel_PistonsA = 0; //Rear Legs Retract
   public static int Rear_Wheel_PistonsB = 1; // Rear Legs Extend
   // public static int Launcher_Piston = 2;
-  public static int Hatch_PistonA = 6; //Hatch Extend
-  public static int Hatch_PistonB = 7; //Hatch Retract
+  public static int Hatch_PistonA = 4; //Hatch Extend
+  public static int Hatch_PistonB = 5; //Hatch Retract
   public static int Hatch_Valve_In = 4; // Vacuum Breaker 1
   public static int Hatch_Valve_Out = 5; // Vacuum Breaker 2
 
