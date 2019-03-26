@@ -9,10 +9,13 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.FrontPistonRelease;
 import frc.robot.commands.HatchRS;
 import frc.robot.commands.HatchVacuum;
+import frc.robot.commands.RearPistonRelease;
 // import frc.robot.commands.LauncherRS;
 import frc.robot.commands.TestPistonRetract;
+import frc.robot.commands.VacuumBreakRelease;
 import frc.robot.commands.TestPistonExtend;
 
 /**
@@ -57,10 +60,21 @@ public class OI {
   	public static int axisAuxZ = 2;
 
   public OI(){
+// Test Button Assignments
 	 button6.whenPressed(new HatchRS(true));
 	 button7.whenPressed(new HatchRS(false));
 	 button11.whenPressed(new HatchVacuum(true));
 	 button10.whenPressed(new HatchVacuum(false));
+	 button9.whenPressed(new VacuumBreakRelease());
+// Driver Button Assignments
+	 buttonAux3.whenPressed(new HatchRS(true));
+	 buttonAux1.whenPressed(new HatchRS(false));
+	 buttonAux4.whenPressed(new HatchVacuum(true));
+	 buttonAux5.whenPressed(new HatchVacuum(false));
+	 buttonAux6.whenPressed(new TestPistonExtend());
+	 buttonAux7.whenPressed(new FrontPistonRelease());
+	 buttonAux8.whenPressed(new RearPistonRelease());
+	 buttonAux9.whenPressed(new VacuumBreakRelease());
 	// buttonAux1.whenPressed(new LauncherRS(false));
 	// buttonAux2.whenPressed(new LauncherRS(true));
 	buttonAux10.whenPressed(new TestPistonExtend());

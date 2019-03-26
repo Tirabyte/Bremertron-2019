@@ -8,48 +8,42 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.DriveTrain;
+import frc.robot.Robot;
+import frc.robot.subsystems.LifterMechanism;
 
-public class AutoDriveForward extends Command {
-
-  private double m_time;
-  private static DriveTrain m_DriveTrain;
-  public AutoDriveForward(double distance, double speed) {
+public class RearPistonRelease extends Command {
+  public static LifterMechanism m_LifterMechanism = Robot.m_lifter;
+  public RearPistonRelease() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    m_time = (distance-4.24)/31.8;// this is value for 0.65 (distance - 11.341)/75.024;
-   // m_speed = speed;
-    requires(m_DriveTrain);
+    requires(m_LifterMechanism);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    setTimeout(m_time);
   }
+
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    // m_drivetrain.drive(m_speed, -m_angle * Kp);
-    // 	Timer.delay(0.01);
+    m_LifterMechanism.setPistonHeight(false, LifterMechanism.AftPistons);
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return true;
+    return false;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    m_DriveTrain.stop();
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    m_DriveTrain.stop();
   }
 }

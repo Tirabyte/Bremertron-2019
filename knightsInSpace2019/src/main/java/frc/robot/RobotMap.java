@@ -34,8 +34,8 @@ public class RobotMap {
   //Piston Assignments
   public static int Front_Wheel_PistonsA = 2;// Fore Legs Retract
   public static int Front_Wheel_PistonsB = 3;// Fore Legs Extend
-  public static int Rear_Wheel_PistonsA = 0; //Rear Legs Retract
-  public static int Rear_Wheel_PistonsB = 1; // Rear Legs Extend
+  public static int Rear_Wheel_PistonsB = 0; //Rear Legs Retract
+  public static int Rear_Wheel_PistonsA= 1; // Rear Legs Extend
   // public static int Launcher_Piston = 2;
   // public static int Hatch_PistonA = 4; //Hatch Retract
   public static int Hatch_Piston = 5; //Hatch Exgtend

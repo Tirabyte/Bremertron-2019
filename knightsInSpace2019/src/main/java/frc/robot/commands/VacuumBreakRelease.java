@@ -7,49 +7,44 @@
 
 package frc.robot.commands;
 
+import frc.robot.subsystems.HatchGripper;
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.DriveTrain;
+// import frc.robot.Robot;
 
-public class AutoDriveForward extends Command {
+public class VacuumBreakRelease extends Command {
 
-  private double m_time;
-  private static DriveTrain m_DriveTrain;
-  public AutoDriveForward(double distance, double speed) {
+  private boolean m_finished = false;
+  public VacuumBreakRelease() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    m_time = (distance-4.24)/31.8;// this is value for 0.65 (distance - 11.341)/75.024;
-   // m_speed = speed;
-    requires(m_DriveTrain);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    setTimeout(m_time);
   }
+
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    // m_drivetrain.drive(m_speed, -m_angle * Kp);
-    // 	Timer.delay(0.01);
+    HatchGripper.m_vacuumBreakSolenoid.set(false);
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return true;
+    return m_finished;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    m_DriveTrain.stop();
+    m_finished = false;
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    m_DriveTrain.stop();
   }
 }

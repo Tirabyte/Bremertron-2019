@@ -38,7 +38,7 @@ public class SetPistonHeight extends Command {
   @Override
   protected void execute() {
     m_lifter.setPistonHeight(m_height, m_piston);
-    Timer.delay(4);  // delay to weight for piston to reach extension NEED ACTUAL TIME
+    //Timer.delay(4);  // delay to weight for piston to reach extension NEED ACTUAL TIME
     m_finished = true;
   }
 

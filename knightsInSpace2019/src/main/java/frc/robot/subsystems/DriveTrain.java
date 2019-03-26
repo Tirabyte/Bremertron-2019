@@ -82,7 +82,7 @@ public class DriveTrain extends Subsystem {
 }
 
   public void jdrive(Joystick joy, Joystick aux) {
-    m_robotDrive.driveCartesian(joy.getX(), joy.getY(), aux.getX());
+    m_robotDrive.driveCartesian(joy.getX(), -joy.getY(), -aux.getX());
     // while(m_LF_encoder.getDistance() < 2) {
     //   SmartDashboard.putNumber("Encoder Distance",m_LF_encoder.getDistance());
     //   SmartDashboard.putNumber("Encoder Distance",m_RF_encoder.getDistance());
@@ -98,7 +98,7 @@ public class DriveTrain extends Subsystem {
     // }
   }
   public void drive(double x, double y, double zRotation) {
-    m_robotDrive.driveCartesian(x, y, zRotation);
+    m_robotDrive.driveCartesian(x, -y, zRotation);
   }
 
   public double getDistance(){
