@@ -15,7 +15,7 @@ import frc.robot.commands.HatchVacuum;
 import frc.robot.commands.RearPistonRelease;
 // import frc.robot.commands.LauncherRS;
 import frc.robot.commands.TestPistonRetract;
-import frc.robot.commands.VacuumBreakRelease;
+import frc.robot.commands.ClawControl;
 import frc.robot.commands.TestPistonExtend;
 
 /**
@@ -65,7 +65,7 @@ public class OI {
 	 button7.whenPressed(new HatchRS(false));
 	 button11.whenPressed(new HatchVacuum(true));
 	 button10.whenPressed(new HatchVacuum(false));
-	 button9.whenPressed(new VacuumBreakRelease());
+	 button9.whenPressed(new ClawControl());
 // Driver Button Assignments
 	 buttonAux3.whenPressed(new HatchRS(true));
 	 buttonAux1.whenPressed(new HatchRS(false));
@@ -74,7 +74,7 @@ public class OI {
 	 buttonAux6.whenPressed(new TestPistonExtend());
 	 buttonAux7.whenPressed(new FrontPistonRelease());
 	 buttonAux8.whenPressed(new RearPistonRelease());
-	 buttonAux9.whenPressed(new VacuumBreakRelease());
+	 buttonAux9.whenPressed(new ClawControl());
 	// buttonAux1.whenPressed(new LauncherRS(false));
 	// buttonAux2.whenPressed(new LauncherRS(true));
 	buttonAux10.whenPressed(new TestPistonExtend());

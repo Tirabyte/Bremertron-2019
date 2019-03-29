@@ -11,10 +11,10 @@ import frc.robot.subsystems.HatchGripper;
 import edu.wpi.first.wpilibj.command.Command;
 // import frc.robot.Robot;
 
-public class VacuumBreakRelease extends Command {
+public class ClawControl extends Command {
 
   private boolean m_finished = false;
-  public VacuumBreakRelease() {
+  public ClawControl() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -27,7 +27,7 @@ public class VacuumBreakRelease extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    HatchGripper.m_vacuumBreakSolenoid.set(false);
+    HatchGripper.m_clawSolenoid.set(false);
   }
 
   // Make this return true when this Command no longer needs to run execute()
